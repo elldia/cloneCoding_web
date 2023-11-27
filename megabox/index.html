@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+    <meta name="keywords" content="메가박스, Megabox">
+    <meta name="description" content="예매, 어느곳에서 보고 싶으세요? 극장별 예매, 어떤 영화를 보고 싶다면 메가박스를 선택하세요.">
     <title>MEET PLAY SHAPE, 메가박스</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="./images/favicon.png" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -23,25 +26,122 @@
         </div>
         <div id="bottom_menu_wrap">
             <div class="all_menu_search">
-                <a href="#"><img src="#" alt="전체 메뉴 열기"></a>
-                <a href="#"><img src="#" alt="검색하기"></a>
+                <a href="#"><img src="./images/icon/ico-sitemap-white.png" alt="전체 메뉴 열기"></a>
+                <a href="#"><img src="./images/icon/ico-search-white.png" alt="검색하기"></a>
             </div>
             <nav class="main_menu1">
                 <a href="#">영화</a>
                 <a href="#">예매</a>
                 <a href="#">극장</a>
             </nav>
-            <h1><a href="#"><img src="#" alt="MEGABOX"></a></h1>
+            <h1><a href="#"><img src="./images/logo-opacity_new2.png" alt="MEGABOX"></a></h1>
             <nav class="main_menu2">
                 <a href="#">이벤트</a>
                 <a href="#">스토어</a>
                 <a href="#">혜택</a>
             </nav>
             <div class="user_menu">
-                <a href="#"><img src="#" alt="상영시간표"></a>
-                <a href="#"><img src="#" alt="마이페이지"></a>
+                <a href="#"><img src="./images/icon/ico-schedule-white.png" alt="상영시간표"></a>
+                <a href="#"><img src="./images/icon/ico-mymega-white.png" alt="마이페이지"></a>
             </div>
         </div>
     </header>
+    <main>
+        <!-- main semantic tag -->
+        <!-- section, article, aside, figure, detail, div, span등의
+            다양한 그룹 요소들을 묶어주는 내용의 전체 묶음 시멘틱태그
+        (항상 사이트 본문내용 전체를 묶어주는 용도로 사용한다.) -->
+        <!-- 1. 박스오피스 -->
+        <section class="movie_rankings">
+            <div class="ranking_top">
+                <h1>박스오피스</h1>
+                <a href="#">더 많은 영화 보기<img src="./images/icon/ico-more-cross-gray.png" alt=""></a>
+            </div>
+            <div class="ranking_contents">
+                <div class="ranking1">
+                    <a href="#">
+                        <span class="ranking_num">1</span>
+                        <span class="dolby">
+                            <img src="./images/icon/mov_top_tag_db.png" alt="dolby cinema">
+                            <img src="./images/icon/mov_top_tag_atmos.png" alt="dolby atmos">
+                        </span>
+                        <img src="./images/ranking1.jpg" alt="서울의 봄">
+                    </a>
+                    <div class="reservation_like">
+                        <!-- 보고 싶어 ♥이미지 CSS 시 변경하기 -->
+                        <a href="#" title="보고 싶어 설정하기"><img src="./images/icon/ico-heart-toggle-main.png" alt=""> 1.5k</a>
+                        <a href="#">예매</a>
+                    </div>
+                </div>
+                <div class="ranking2">
+                    <a href="#">
+                        <span class="ranking_num">2</span>
+                        <span class="dolby">
+                            <img src="./images/icon/mov_top_tag_atmos.png" alt="dolby atmos">
+                        </span>
+                        <img src="./images/ranking2.jpg" alt="싱글 인 서울">
+                    </a>
+                    <div class="reservation_like">
+                        <!-- 보고 싶어 ♥이미지 CSS 시 변경하기 -->
+                        <a href="#" title="보고 싶어 설정하기"><img src="./images/icon/ico-heart-toggle-main.png" alt=""> 1.5k</a>
+                        <a href="#">예매</a>
+                    </div>
+                </div>
+                <div class="ranking3">
+                    <a href="#">
+                        <span class="ranking_num">3</span>
+                        <img src="./images/ranking3.jpg" alt="괴물">
+                    </a>
+                    <div class="reservation_like">
+                        <!-- 보고 싶어 ♥이미지 CSS 시 변경하기 -->
+                        <a href="#" title="보고 싶어 설정하기"><img src="./images/icon/ico-heart-toggle-main.png" alt=""> 1.5k</a>
+                        <a href="#">예매</a>
+                    </div>
+                </div>
+                <div class="ranking4">
+                    <a href="#">
+                        <span class="ranking_num">1</span>
+                        <span class="dolby">
+                            <img src="./images/icon/mov_top_tag_db.png" alt="dolby cinema">
+                        </span>
+                        <img src="./images/ranking4.jpg" alt="나폴레옹">
+                    </a>
+                    <div class="reservation_like">
+                        <!-- 보고 싶어 ♥이미지 CSS 시 변경하기 -->
+                        <a href="#" title="보고 싶어 설정하기"><img src="./images/icon/ico-heart-toggle-main.png" alt=""> 1.5k</a>
+                        <a href="#">예매</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 2. 검색, 시간표, 오피스, 빠른 예매 -->
+        <section class="movie_info_bnr">
+            <div class="movie_search">
+                <p>영화명을 입력해 주세요</p>
+                <a href="#"><img src="./images/icon/ico-search-white.png" alt="검색하기"></a>
+            </div>
+            <a href="#"><img src="./images/icon/ico-schedule-main.png" alt="">상영시간표</a>
+            <a href="#"><img src="./images/icon/ico-boxoffice-main.png" alt="">박스오피스</a>
+            <a href="#"><img src="./images/icon/ico-quick-reserve-main.png" alt="">빠른예매</a>
+        </section>
+        <p class="mouse"><img src="./images/icon/ico-mouse.png" alt="아래로 이동"></p>
+        <!-- 3. 혜택정보 -->
+        <section class="movie_benefit"></section>
+        <!-- 3-1. VIP, 멤버십, 할인카드, 이벤트, 스토어 -->
+        <section class="movie_benefit_bnr"></section>
+        <!-- 3-2. 매장정보 GRAND OPENING -->
+        <section class="new_store"></section>
+        <!-- 4. 큐레이션 -->
+        <section class="curation_wrap"></section>
+        <!-- 5. 메가박스 안내 -->
+        <section class="megabox_info_wrap"></section>
+        <!-- 5-1. 메가박스 지점 안내 -->
+        <section class="megabox_store_info"></section>
+        <!-- 5-2. 고객센터, 질문, 문의, 접수, 대관예매 -->
+        <section class="customer_service"></section>
+        <!-- 6. 광고배너 -->
+        <section class="advertising_bnr"></section>
+    </main>
+    <footer></footer>
 </body>
 </html>
