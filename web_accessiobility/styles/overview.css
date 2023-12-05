@@ -1,13 +1,47 @@
+/* 
+    페이지 제목 글자 크기 = 18px
+    페이지 부제목 글자 크기 = 16px
+    페이지 경로 = 11px
+    본문 강조 내용 = 28px
+    본문 내용 = 12px
+*/
 main {}
 main .title_path {}
-main .title_path h1 {}
+main .title_path h1 {font-size:1.125rem;}
 main .title_path .path {}
-main .title_path .path dd {}
+main .title_path .path dd {font-size:0.688rem;}
 main .title_path .path dd img {}
-main .title_path .path dd em {}
+main .title_path .path dd em {
+    font-size:0.688rem;
+    font-weight:500;
+}
 main .contents {}
-main .contents h2 {}
+main .contents h2 {
+    color:#1e61a8;
+    font-weight:700;
+}
 main .contents h2 img {}
-main .contents .first {}
-main .contents .first em {}
-main .contents p {}
+main .contents .first {
+    font-size:1.75rem;
+    line-height:1.4;
+}
+main .contents .first em {color:#1f9b0f; font-size:1.75rem;}
+main .contents p {
+    font-size:0.75rem;
+    line-height:1.7;
+}
+/* --------------------------------------------------------- */
+/* 연습 */
+h1 {}
+header {}
+header h1 {}
+header form {}
+header form input {}
+header a {}
+.box {}
+.box a {}
+.box a span {}
+.box .contents {}
+.box .contents p {}
+.box .img {}
+.box .img img {}
