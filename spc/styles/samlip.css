@@ -1,0 +1,87 @@
+/* header */
+header {}
+header h1 {}
+header h1 a {}
+header h1 a img {}
+header nav {}
+header nav a {}
+header nav a.active {}
+header .lnb {}
+header .lnb a {}
+/* main */
+main {text-align:center;}
+main .path {
+    background-color:#f1f1f1;
+    border-top:1px solid #aaa;
+    border-bottom:1px solid #aaa;
+    text-align:right;
+    padding:15px 50px;
+}
+main .path dd {}
+main .path dd a {}
+main .path dd em {font-weight:800;}
+main h1 {
+    font-size:2.5rem;
+    margin:40px 0 15px;
+}
+/* main > p {margin-bottom:40px;} */
+main h1+p {margin-bottom:40px;}
+main .bg {
+    background-color:#f1f1f1;
+    padding:40px 0;
+}
+main .bg p {line-height:1.7;}
+main .vision {
+    padding:40px 0;
+}
+main .vision h2 {
+    font-size:1.313rem;
+    color:#36b4e5;
+    margin-bottom:20px;
+}
+main .vision p {
+    font-size:1.938rem;
+    line-height:1.5;
+}
+main .vision .first {margin-bottom:60px;}
+main .goal_strategy {
+    background-color:#f1f1f1;
+    padding:40px 0;
+}
+main .goal_strategy h2 {
+    font-size:1.313rem;
+    margin-bottom:20px;
+}
+main .goal_strategy ul {}
+main .goal_strategy ul li {/*공통css*/
+    background-color:#fff;
+    font-size:1.5rem;
+    border-radius:50%;
+    display:inline-block;
+    /* box-shadow:x축 y축 흐림값 색상 */
+    box-shadow:0 0 10px rgba(0,0,0,0.3);
+    margin-right:-10px;
+}
+main .goal_strategy .goal {margin-bottom:50px;}
+main .goal_strategy .goal li {/*개별css*/
+    width:250px; height:250px;
+    /* line-height 수직 중앙 규칙(내용이 1줄일 경우만 가능) */
+    line-height:250px;/*height값과 같은 값 적용하기px*/
+}
+main .goal_strategy .strategy li {
+    width:180px; height:180px;
+    padding:45px 10px 0;
+}
+main .goal_strategy ul li.first {background-color:#36b4e5;}
+main .goal_strategy ul li.last {background-color:#f3c300;}
+main .goal_strategy ul li h3 {font-size:1.125rem;}
+main .goal_strategy ul li p {line-height:1.5;}
+/* footer */
+footer {}
+footer .top {}
+footer .top .left {}
+footer .top .left a {}
+footer .top .right {}
+footer .top .right a {}
+footer address {}
+footer .copyright {}
