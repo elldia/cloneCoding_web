@@ -24,6 +24,7 @@ main .title_path .path dd em {
 }
 main .contents {
     padding:50px 20px;
+    background:url(../images/bg.png) no-repeat 90% 30%;
 }
 main .contents h2 {
     color:#1e61a8;
