@@ -1,13 +1,21 @@
 /* header */
-header {}
+header {
+    height:92px;
+    display:flex; 
+    flex-flow:row nowrap;
+    justify-content:space-between;
+    align-items:center; padding:0 50px;
+}
 header h1 {}
 header h1 a {}
-header h1 a img {}
+header h1 a img {width:60px;}
 header nav {}
-header nav a {}
+header nav a {padding-right:20px;}
+header nav a:last-child {padding-right:0;}
 header nav a.active {}
 header .lnb {}
 header .lnb a {}
+header .lnb a:last-child {padding-left:20px;}
 /* main */
 main {text-align:center;}
 main .path {
@@ -77,11 +85,22 @@ main .goal_strategy ul li.last {background-color:#f3c300;}
 main .goal_strategy ul li h3 {font-size:1.125rem;}
 main .goal_strategy ul li p {line-height:1.5;}
 /* footer */
-footer {}
-footer .top {}
+footer {padding:0 50px;}
+footer .top {
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content:space-between;
+}
 footer .top .left {}
-footer .top .left a {}
+footer .top .left a {
+    font-weight:700;
+    margin-right:20px;
+}
 footer .top .right {}
-footer .top .right a {}
+footer .top .right a {
+    border:1px solid #aaa;
+    padding:7px 15px;
+    display:inline-block;
+}
 footer address {}
 footer .copyright {}
