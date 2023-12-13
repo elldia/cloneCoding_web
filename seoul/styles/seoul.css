@@ -64,10 +64,82 @@ header .bottom .right .weather .current_weather {
     letter-spacing:-0.03rem; padding:5px 0;
 }
 /* main1행 */
+main {}
+main > * {width:1151px; margin:0 auto;}
 /* main1행-banner */
+main .visual {
+    background-color:yellow;
+    display:flex; justify-content:space-between;
+}
+main .visual .left {
+    background-color:pink;
+    width:770px; position:relative;
+}
+main .visual .left a {}
+main .visual .left a img {}
+main .visual .left .close {
+    background-color:#1e6cb3; color:#fff;
+    font-size:0.813rem;
+    padding:5px 9px; border-radius:5px;
+    display:inline-block;
+    position:absolute; right:15px; bottom:15px;
+}
 /* main1행-right(코로나, 교통정보) */
+main .visual .right {
+    background-color:lime;
+    width:360px;
+}
+main .visual .right .corona {
+    position:relative; display:block;
+}
+main .visual .right .corona img {}
+main .visual .right .corona .date {
+    position:absolute; right:; top:;
+}
+main .visual .right .corona .data {
+    position:absolute; text-align:center; font-size:; 
+}
+main .visual .right .corona .data:nth-child(3) {width:; left:; top:;}/* 확진자 */
+main .visual .right .corona .data:nth-child(4) {width:; right:; top:;}/* 추가확진자 */
+main .visual .right .corona .data:nth-child(5) {width:; left:; bottom:;}/* 퇴원 */
+main .visual .right .corona .data:nth-child(6) {width:; left:; bottom:;}/* 추가퇴원 */
+main .visual .right .corona .data:nth-child(7) {width:; right:; bottom:;}/* 사망 */
+main .visual .right .traffic {}
+main .visual .right .traffic img {}
 /* main2행-주요서비스 */
+main .service {}
+main .service .title {
+    background-color:yellow;
+    display:flex; flex-flow:row nowrap;
+    justify-content: space-between;
+    padding:15px 0;
+}
+main .service .title h1 {}
+main .service .title .site {}
+main .service .contents {
+    background-color:yellowgreen;
+    display:flex; flex-flow:row nowrap;
+}
+main .service .contents a {
+    display:flex;
+    /*a한테 display:flex를 적용하면 
+    display:block을 쓴 것과 같은 의미로 적용된다. */
+    flex-flow:column nowrap;
+    width:9.09%; text-align:center;
+}
+main .service .contents a img {width:60px; margin:0 auto;}
+main .service .contents a span {font-size:0.813rem;}
 /* main3행-배너3 */
+main .bnr_bg {
+    background-color:#eff4f8;
+    width:1920px;
+}
+main .bnr_bg .bnr {
+    width:1151px; margin:0 auto;
+    display:flex;
+}
+main .bnr_bg .bnr a {display:block;}
+main .bnr_bg .bnr a img {}
 /* main4행-게시판 */
 /* main4행-게시판-이벤트신청 */
 /* main4행-게시판-이달행사축제 */
@@ -75,5 +147,36 @@ header .bottom .right .weather .current_weather {
 /* main5행-분야정보 */
 /* main6행-새소식 */
 /* footer */
+footer {
+    background-color:aqua;
+    width:1151px; margin:0 auto;
+}
 /* footer-1행 */
+footer .top {}
+footer .top .menu {}
+footer .top .menu a {}
+footer .top .menu a em {}
+footer .top .sns {}
+footer .top .sns a {
+    background-image:url(../images/icon_sns2/icon_set3.png);
+    background-repeat:no-repeat;
+    width:25px; height:25px;
+    text-indent:-9999px;
+    display:inline-block;
+}
+footer .top .sns a:nth-child(1) {}
+footer .top .sns a:nth-child(2) {background-position-x:-25px;}
+footer .top .sns a:nth-child(3) {background-position-x:-50px;}
+footer .top .sns a:nth-child(4) {background-position-x:-75px;}
+footer .top .sns a:nth-child(5) {background-position-x:-100px;}
+footer .top .sns a:nth-child(6) {background-position-x:-125px;}
+footer .top .sns a:hover {background-position-y:-25px;}
 /* footer-2행 */
+footer .bottom {}
+footer .bottom .left {}
+footer .bottom .left p {}
+footer .bottom .left p img {}
+footer .bottom .left address {}
+footer .bottom .banner {}
+footer .bottom .banner a {}
+footer .bottom .banner a img {}
