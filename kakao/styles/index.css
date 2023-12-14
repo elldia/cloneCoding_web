@@ -1,0 +1,44 @@
+/* header */
+header {
+    padding:0 20px; height:60px;
+    background:rgba(0,0,0,0.8);
+    position:fixed; left:0; top:0; width:100%; z-index:9999;
+    display:flex; flex-flow:row nowrap;
+    justify-content: space-between; align-items: center;
+}
+header h1 {}
+header h1 a {}
+header h1 a img {width:150px;}
+header nav {}
+header nav a {color:#fff; margin-right:16px;}
+header nav a:last-child {margin-right:0;}
+header .recruitment {color:#fff;}
+header .recruitment .fa-circle-chevron-right {color:#17a2b8;}
+/* main */
+main {}
+main .visual {}
+main .visual video {}
+main .visual .logo {}
+main .visual .logo img {}
+main .board {}
+main .board a {}
+main .board a .category {}
+main .board a h2 {}
+main .board a .contents {}
+main .gallery {}
+main .gallery a {}
+main .gallery a .category {}
+main .gallery a .photo {}
+main .gallery a .photo img {}
+main .gallery a .contents {}
+main .gallery a h2 {}
+/* footer */
+footer {}
+footer .top {}
+footer .top .f_nav {}
+footer .top .f_nav a {}
+footer .top .site {}
+footer .top .site > a {}
+footer .top .site .sub {}
+footer .top .site .sub a {}
+footer address {}

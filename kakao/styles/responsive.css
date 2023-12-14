@@ -1,0 +1,5 @@
+@media screen and (max-width:769px){
+    header h1 a img {width:100px;}
+    header nav a {font-size:0.875rem; margin-right:10px;}
+    header .recruitment {display:none;}
+}
