@@ -15,30 +15,71 @@ header nav a:last-child {margin-right:0;}
 header .recruitment {color:#fff;}
 header .recruitment .fa-circle-chevron-right {color:#17a2b8;}
 /* main */
-main {}
-main .visual {}
-main .visual video {}
-main .visual .logo {}
+main {background-color:#f1f1f1; padding-bottom:40px;}
+main .visual {
+    background-color:aqua;
+    height:650px; overflow:hidden; position:relative;
+}
+main .visual video {width:100%;}
+main .visual .logo {
+    position:absolute; left:0; top:25%; z-index:500;
+    width:100%; text-align:center;
+}
 main .visual .logo img {}
+main .board, main .gallery {
+    max-width:1200px; margin:40px auto 0;
+    display:flex; flex-flow:row nowrap;
+    justify-content:space-between;
+}
+main .board a, main .gallery a {
+    background-color:#fff;
+    display:block; border-radius:5px;
+    width:calc(100% / 3 - 40px / 3); padding:15px;
+}
 main .board {}
 main .board a {}
-main .board a .category {}
-main .board a h2 {}
-main .board a .contents {}
+main .board a .category {margin-bottom:15px;}
+main .board a h2 {font-size:1.5rem; font-weight:800; line-height:1.5; letter-spacing:-0.2px;}
+main .board a:first-child h2 {padding-bottom:50px;}
+main .board a .contents {line-height:1.7;}
+main .board a:first-child .contents {color:#777;}
 main .gallery {}
 main .gallery a {}
-main .gallery a .category {}
+main .gallery a .category {margin-bottom:15px;}
 main .gallery a .photo {}
-main .gallery a .photo img {}
-main .gallery a .contents {}
-main .gallery a h2 {}
+main .gallery a .photo img {width:100%;}
+main .gallery a .contents {line-height:1.7; color:#777;}
+main .gallery a h2 {font-size:1.5rem; font-weight:800; line-height:1.5; letter-spacing:-0.2px;}
 /* footer */
-footer {}
-footer .top {}
+footer {border-top:1px solid #777; padding:40px 0;}
+footer .top, footer address {max-width:1200px; margin:0 auto;}
+footer .top {
+    display:flex; flex-flow:row nowrap;
+    justify-content: space-between; padding:15px 0;
+    align-items:center;
+}
 footer .top .f_nav {}
 footer .top .f_nav a {}
-footer .top .site {}
-footer .top .site > a {}
-footer .top .site .sub {}
-footer .top .site .sub a {}
-footer address {}
+footer .top .f_nav a::after {
+    content:''; display:inline-block;/*필수*/
+    width:1px; height:12px; background-color:#aaa;
+    margin:0 4px 0 7px;
+}
+footer .top .f_nav a:last-child::after {display:none;}
+footer .top .site {position:relative;}
+footer .top .site > a {
+    background-color:#222; color:#fff;
+    display:block; border-radius:5px; padding:7px 10px;
+}
+footer .top .site .sub {
+    background-color:#fff;
+    position:absolute; right:0; top:-120px;
+    width:160px; border:1px solid #aaa; border-radius:5px;
+    display:none; /*초기 숨기기*/
+}
+footer .top .site .sub a {
+    display:block; padding:10px; border-bottom:1px solid #aaa;
+}
+/* site에 마우스 올리면(hover) 자식 sub가 보인다(none->block) */
+footer .top .site:hover .sub {display:block;}
+footer address {color:#777; line-height:1.7;}
