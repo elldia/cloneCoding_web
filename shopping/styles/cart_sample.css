@@ -1,0 +1,243 @@
+/* layout */
+main {
+    background:aqua; 
+    width:1136px; padding:50px 0 0; margin:0 auto;
+}
+main .item_detail {display:flex;}
+main .item_detail .left_thumnail {
+    background:pink; width:calc(100% - 481px);
+    display:flex;
+}
+main .item_detail .right_container {
+    background:yellow; width:481px;
+}
+/* left_thumnail */
+main .item_detail .left_thumnail .small_thumnail {
+    width:56px; display:flex; flex-flow:column nowrap;
+}
+main .item_detail .left_thumnail .small_thumnail a {
+    margin-bottom:7px; width:56px; height:56px; overflow:hidden;
+    border:2px solid #fff; border-radius:5px;
+}
+main .item_detail .left_thumnail .small_thumnail a img {
+    width:100%; transition:transform 0.2s;
+}
+main .item_detail .left_thumnail .big_thumnail {width:calc(100% - 56px); text-align:center;}
+main .item_detail .left_thumnail .big_thumnail img {width:95%; border-radius:15px;}
+/* left_thumnail-hover */
+main .item_detail .left_thumnail .small_thumnail a:hover {border:2px solid #35c5f0;}
+main .item_detail .left_thumnail .small_thumnail a:hover img {transform:scale(1.2);}
+/* right_container */
+main .item_detail .right_container .brand {font-size:0.875rem;}
+/* right - 제목, 관심상품, 공유 */
+main .item_detail .right_container .title {
+    margin:10px 0; display:flex; justify-content: space-between; align-items: center;
+}
+main .item_detail .right_container .title h1 {
+    font-size:1.375rem; width:60%; line-height:1.5;
+}
+main .item_detail .right_container .title .icon {display:flex;}
+/* right - 관심상품, 공유 ★공통★ 선택자 */
+main .item_detail .right_container .title .icon a {}
+main .item_detail .right_container .title .icon a i[class^=fa]  {}
+/* right - 관심상품, 공유 ★개별★ 선택자 */
+main .item_detail .right_container .title .icon a[title^="관심"] {
+    display:flex; flex-flow:column nowrap; margin-right:10px;
+}
+main .item_detail .right_container .title .icon a[title^="관심"] i {font-size:20px;}
+main .item_detail .right_container .title .icon a[title^="관심"] span {font-size:0.688rem;}
+main .item_detail .right_container .title .icon a[title^="공유"] {}
+main .item_detail .right_container .title .icon a[title^="공유"] i {font-size:24px;}
+/* right - 리뷰 */
+main .item_detail .right_container .review  {}
+main .item_detail .right_container .review .score  {}
+main .item_detail .right_container .review .score i[class$=star] {
+    font-size:13px; color:#35c5f0;
+}
+main .item_detail .right_container .review .num {
+    font-size:0.813rem; color:#35c5f0; font-weight:700;
+}
+/* right - 가격, 오늘출발, 쿠폰받기(공통) */
+main .item_detail .right_container .price_coupon {
+    display:flex; justify-content: space-between; align-items:flex-end;
+}
+main .item_detail .right_container .price_coupon .price {
+    display:grid; grid-template-rows:30px 40px; align-items:flex-end;
+}
+main .item_detail .right_container .price_coupon .price .before {}
+main .item_detail .right_container .price_coupon .price .price_result {}
+main .item_detail .right_container .price_coupon .coupon_get {}
+/* right - 가격(할인 전 가격, 정보 팝업 포함) */
+main .item_detail .right_container .price_coupon .price .before {}
+main .item_detail .right_container .price_coupon .price .before span {color:#656e75;}
+main .item_detail .right_container .price_coupon .price .before del {color:#bdbdbd; text-decoration:line-through;}
+main .item_detail .right_container .price_coupon .price .before span:last-child {position:relative;}
+main .item_detail .right_container .price_coupon .price .before span:last-child i[class$=info] {cursor:pointer; color:#bdbdbd;}
+main .item_detail .right_container .price_coupon .price .before span:last-child .open {
+    background:#fff; padding:10px; display:block;
+    box-shadow:0 4px 10px rgba(63,71,77,0.2); width:350px;
+    font-size:0.875rem; line-height:1.4; border-radius:7px;
+    position:absolute; z-index:900; left:0;
+    transform:translate(-50%, 5px);
+}
+/* right - 가격(할인 후, 특가, 오늘출발) */
+main .item_detail .right_container .price_coupon .price .price_result {}
+main .item_detail .right_container .price_coupon .price .price_result em {
+    font-size:2rem; font-weight:700;
+}
+main .item_detail .right_container .price_coupon .price .price_result span {font-size:2rem;}
+main .item_detail .right_container .price_coupon .price .price_result .sale {
+    background:rgb(255, 119, 119); font-size:0.813rem; color:#fff;
+    padding:3px 5px; border-radius:3px;
+    position:relative; top:-3px;
+}
+main .item_detail .right_container .price_coupon .price .price_result img[src*=today] {height:15px;}
+/* right - (우측)쿠폰받기 */
+main .item_detail .right_container .price_coupon .coupon_get {
+    background:rgb(255, 119, 119);
+    display:flex; border-radius:10px; padding:0 12px;
+    align-items:center; height:30px;
+}
+main .item_detail .right_container .price_coupon .coupon_get span {
+    color:#fff; font-size:0.875rem; padding-right:7px;
+}
+main .item_detail .right_container .price_coupon .coupon_get i[class$=bracket] {
+    font-size:18px; color:#fff; transform:scaleY(-1);
+}
+/* right - 혜택, 배송(공통영역&혜택 개별영역 포함) */
+main .item_detail .right_container .benefit_shipping {
+    display:flex; flex-flow:row wrap; padding:20px 0;
+}
+main .item_detail .right_container .benefit_shipping dt {
+    background:lime; width:42px; color:#828c94;
+}
+main .item_detail .right_container .benefit_shipping dt:nth-child(1) {padding-bottom:20px;}
+main .item_detail .right_container .benefit_shipping dd {
+    background:aqua; width:calc(100% - 42px); 
+}
+main .item_detail .right_container .benefit_shipping dd em {font-weight:700;}
+/* right - 혜택, 배송(공통영역&혜택 개별영역 포함) - 글자크기 공통 */
+main .item_detail .right_container .benefit_shipping dt,
+main .item_detail .right_container .benefit_shipping dd,
+main .item_detail .right_container .benefit_shipping dd * {padding-bottom:5px; font-size:0.875rem;}
+/* right - 배송 dd 개별 선택자 */
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) {
+    display:flex; flex-flow:column nowrap;
+}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > em {}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > span {}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > span em {color:#35c5f0;}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > span > span {position:relative;}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > span > span i[class$=info] {}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > span > span .open {
+    width:380px; background:#fff; border-radius:5px; 
+    padding:16px; box-shadow:0 2px 10px rgba(63,71,77,0.25);
+    display:block; z-index:900;
+    position:absolute; left:0; transform:translateX(-50%);
+}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > span > span .open .close {
+    position:absolute; right:10px; top:10px; cursor:pointer;
+}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > span > span .open strong {
+    line-height:1.5;
+}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delivery {}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delivery i[class$=ck] {font-size:13px; color:#797979;}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delivery span {font-size:0.813rem; color:#797979;}
+/* right - 배송 dd 도착 예정 정보(클릭 메뉴&open내용) - 메뉴 */
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delivery_menu {
+    background:#f7f8fa; padding:8px 12px; cursor:pointer; border-radius:5px;
+}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delivery_menu img {}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delivery_menu em {}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delivery_menu span {}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delivery_menu strong {font-weight:600;}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delivery_menu i[class$=down] {float:right;}
+/* right - 배송 dd 도착 예정 정보(클릭 메뉴&open내용) - 내용 */
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delivery_menu_open {
+    display:flex; flex-flow:column nowrap;
+    border-top:1px solid #bdbdbd;
+}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delivery_menu_open .list:nth-child(1) {padding-top:15px;}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delivery_menu_open .list {
+    display:flex; justify-content: space-between; padding:0 15px 15px;
+    /* line-height:40px; padding:0 15px; */
+    background:#f7f8fa;
+    position:relative; /* align-items: center; */
+}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delivery_menu_open .list::before {
+    /* list 사이 점선 만들기 */
+    content:''; display:block; border-bottom:1px dashed #dbdbdb;
+    height:1px; width:calc(100% - 30px);
+    position:absolute; top:10px;
+}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delivery_menu_open .list:first-child::before {top:20px;}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delivery_menu_open .list:nth-child(2) * {font-weight:700;}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delivery_menu_open .list:nth-child(3) {
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delivery_menu_open .list .yoil,
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delivery_menu_open .list .percent {position:relative; background:#f7f8fa;}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delivery_menu_open .list .yoil {padding-right:10px;}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delivery_menu_open .list .percent {padding-left:10px;}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delivery_menu_open strong::before {
+    /* strong 앞 점 모양 만들기 */
+    content:''; display:inline-block;
+    width:4px; height:4px; border-radius:50%; background:#757575;
+    position:relative; top:-2px;
+}
+main .item_detail .right_container .benefit_shipping dd:nth-of-type(2) > .delivery_menu_open strong {
+    font-size:0.75rem; color:#757575; line-height:1.6; padding:10px 15px;
+}
+/* right - 브랜드 바로가기 */
+main .item_detail .right_container .brand_link {}
+main .item_detail .right_container .brand_link .name {}
+main .item_detail .right_container .brand_link .name img {}
+main .item_detail .right_container .brand_link .link {}
+main .item_detail .right_container .brand_link .link span {}
+main .item_detail .right_container .brand_link .link i[class$=right] {}
+/* right_container-form */
+main .item_detail .right_container #itemFrm {}
+main .item_detail .right_container #itemFrm fieldset {}
+/* right_container-form 색상, 사이즈 선택 메뉴(공통) */
+main .item_detail .right_container #itemFrm fieldset #colorOpt,
+main .item_detail .right_container #itemFrm fieldset #sizeOpt {}
+main .item_detail .right_container #itemFrm fieldset #colorOpt option,
+main .item_detail .right_container #itemFrm fieldset #sizeOpt option {}
+/* right_container-form 색상, 사이즈 선택 메뉴(개별) */
+main .item_detail .right_container #itemFrm fieldset #colorOpt {}
+main .item_detail .right_container #itemFrm fieldset #colorOpt option {}
+main .item_detail .right_container #itemFrm fieldset #sizeOpt {}
+main .item_detail .right_container #itemFrm fieldset #sizeOpt option {}
+/* right_container-form 색상, 사이즈 모든 옵션 선택 시 open 내용(공통) */
+main .item_detail .right_container #itemFrm fieldset .selectResult {}
+main .item_detail .right_container #itemFrm fieldset .selectResult .opt_list {}
+main .item_detail .right_container #itemFrm fieldset .selectResult .opt_list .opt1,
+main .item_detail .right_container #itemFrm fieldset .selectResult .opt_list .opt2 {}
+main .item_detail .right_container #itemFrm fieldset .selectResult .num_result #minus,
+main .item_detail .right_container #itemFrm fieldset .selectResult .num_result #plus {}
+/* right_container-form 색상, 사이즈 모든 옵션 선택 시 open 내용(개별) */
+main .item_detail .right_container #itemFrm fieldset .selectResult .opt_list .opt1 {}
+main .item_detail .right_container #itemFrm fieldset .selectResult .opt_list .opt2 {}
+main .item_detail .right_container #itemFrm fieldset .selectResult .num_result {}
+main .item_detail .right_container #itemFrm fieldset .selectResult .num_result #minus {}
+main .item_detail .right_container #itemFrm fieldset .selectResult .num_result #num_count {}
+main .item_detail .right_container #itemFrm fieldset .selectResult .num_result #plus {}
+main .item_detail .right_container #itemFrm fieldset .selectResult .order_price {}
+main .item_detail .right_container #itemFrm fieldset .selectResult .close {}
+/* right_container-form 주문금액 */
+main .item_detail .right_container #itemFrm fieldset:nth-child(2) h2 {}
+main .item_detail .right_container #itemFrm fieldset:nth-child(2) .order_price {}
+/* right_container-form 쿠폰받기 */
+main .item_detail .right_container #itemFrm fieldset:nth-child(3) .coupon {}
+main .item_detail .right_container #itemFrm fieldset:nth-child(3) .coupon > span {}
+main .item_detail .right_container #itemFrm fieldset:nth-child(3) .coupon > .get {}
+main .item_detail .right_container #itemFrm fieldset:nth-child(3) .coupon > .get span {}
+main .item_detail .right_container #itemFrm fieldset:nth-child(3) .coupon > .get i[class$=bracket] {}
+/* right_container-form 장바구니, 바로구매(공통) */
+main .item_detail .right_container #itemFrm fieldset:nth-child(3) #cart,
+main .item_detail .right_container #itemFrm fieldset:nth-child(3) #buy {}
+/* right_container-form 장바구니, 바로구매(개별) */
+main .item_detail .right_container #itemFrm fieldset:nth-child(3) #cart {}
+main .item_detail .right_container #itemFrm fieldset:nth-child(3) #buy {}
