@@ -1,0 +1,112 @@
+/* Firefox */
+html {scrollbar-width: 10px;;scrollbar-color: #222 #f1f1f1;}
+/* Opera */
+html::-o-scrollbar {width: 10px;}/*스크롤바 크기*/
+html::-o-scrollbar-thumb {background-color: #222;border-radius: 5px;}/*스크롤 드래그바*/
+html::-o-scrollbar-thumb:hover {background-color: #555;}
+/* Chrome, Safari, Edge 등 웹킷 기반 브라우저 */
+::-webkit-scrollbar {width: 10px;}/*스크롤바 크기*/
+::-webkit-scrollbar-track {box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);}/*스크롤바 배경*/
+::-webkit-scrollbar-thumb {background-color: #222;border-radius: 5px;}/*스크롤 드래그바*/
+::-webkit-scrollbar-thumb:hover {background-color: #555;}
+/* 인스타그램 CSS */
+/* ----layout */
+#instagram {
+    max-width:480px;
+    /* height:90vh; overflow:hidden; */
+    margin:50px auto 0;
+    border:1px solid #eee;
+}
+#instagram main {
+    height:700px; overflow-y:auto; overflow-x:hidden;
+}
+#instagram main section {}
+/* ----nav */
+#instagram nav {
+    /* position:fixed; width:480px;
+    left:50%; transform:translateX(-50%); 
+    bottom:40px; z-index:999; */
+    display:flex; 
+    justify-content: space-between;
+    align-items:center;
+}
+#instagram nav a {
+    width:calc(100% / 5);
+    text-align:center; padding:30px 0;
+}
+#instagram nav a i[class*=fa] {font-size:24px;}
+/* section 게시글 */
+/* section 게시글 ----상단(프로필) */
+#instagram main section .profile_top {
+    display:flex; justify-content:space-between;
+    align-items: center; height:50px; padding:0 10px;
+}
+#instagram main section .profile_top .name {display:flex;}
+#instagram main section .profile_top .name .photo {
+    width:25px; height:25px; overflow:hidden; border-radius:50%;
+}
+#instagram main section .profile_top .name .photo img {
+    width: 295%; transform: translate(-20px, -16px);
+}
+#instagram main section .profile_top .name .id {margin-left:10px;}
+#instagram main section .profile_top .right {display:flex; align-items: center;}
+#instagram main section .profile_top .right a {}
+#instagram main section .profile_top .right a.link {
+    background:#888; color:#fff; border-radius:8px;
+    padding:5px 10px; margin-right:5px; font-size:0.81rem;
+}
+#instagram main section .profile_top .right a.more {}
+#instagram main section .profile_top .right a.more i[class$=ellipsis] {}
+/* section 게시글 ----상단(사진) */
+#instagram main section .photo_all {
+    height:500px; overflow:hidden;
+}
+#instagram main section .photo_all .photo {}
+#instagram main section .photo_all .photo img {width:100%;}
+#instagram main section .photo_all .photo1 {}
+#instagram main section .photo_all .photo2 {}
+#instagram main section .photo_all .photo1 img {}
+#instagram main section .photo_all .photo2 img {}
+/* section 게시글 ----내용(좋아요/공유/북마크 등) */
+#instagram main section .container  {}
+#instagram main section .container .menu_top  {
+    display:flex; justify-content: space-between; align-items: center;
+    height:40px; position:relative; padding:0 10px;
+    /* margin-top:10px; */
+}
+#instagram main section .container .menu_top .left_icon  {
+    display:flex; align-items: center;
+}
+#instagram main section .container .menu_top .left_icon a  {margin-right:8px;}
+#instagram main section .container .menu_top .left_icon a.like {transform:translateY(2px)}
+#instagram main section .container .menu_top .left_icon a img {width:24px;}
+#instagram main section .container .menu_top .left_icon a.comment  {}
+#instagram main section .container .menu_top .left_icon a.send  {}
+#instagram main section .container .menu_top .left_icon a.comment i[class$=comment],
+#instagram main section .container .menu_top .bookmark i[class$=bookmark],
+#instagram main section .container .menu_top .left_icon a.send i[class*=paper] {font-size:24px;}
+#instagram main section .container .menu_top .pagenation {
+    display:flex;
+    position:absolute; left:50%; transform:translateX(-50%);
+}
+#instagram main section .container .menu_top .pagenation span {
+    width:10px; height:10px; background:#ccc; border-radius: 50%;
+    margin-right:6px;
+}
+#instagram main section .container .menu_top .pagenation span:last-child {margin:0;}
+#instagram main section .container .menu_top .pagenation .active {background:#4864ff;}
+#instagram main section .container .menu_top .bookmark {}
+#instagram main section .container .menu_top .bookmark i[class$=bookmark] {}
+/* section 게시글 ----내용(글 내용) */
+#instagram main section .container .contents {padding:0 10px;}
+#instagram main section .container .contents > * {line-height:1.7;}
+#instagram main section .container .contents .like_people {font-weight:700;}
+#instagram main section .container .contents .con {}
+#instagram main section .container .contents .con span {}
+#instagram main section .container .contents .con span.name {font-weight:600;}
+#instagram main section .container .contents .con span.detail {}
+/* section 게시글 ----하단(댓글~날짜) */
+#instagram main section .container .contents .review {}
+#instagram main section .container .contents .date {font-size:0.91rem;}
+#instagram main section .container .contents .review,
+#instagram main section .container .contents .date {color:#888;}
