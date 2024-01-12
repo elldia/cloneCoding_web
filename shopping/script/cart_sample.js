@@ -52,13 +52,24 @@ const delivery_menu_open = document.querySelector('.delivery_menu_open');
 console.log(delivery_menu_open, delivery_menu, delivery_menu_arrow)
 delivery_menu_open.style.display = 'none';
 // 2. 배송1/9(화) 도착 예정 94% 메뉴 클릭 시 
+let delivery_menu_open_status = false //현재 상태 변수(false==숨김)
 delivery_menu.addEventListener('click',function(){
-    // 3. 위(2)의 둥근 모서리 하단 모양 뾰족하게 변경
-    delivery_menu.style = 'border-bottom-left-radius:0; border-bottom-right-radius:0;'
-    // 4. 위(2)의 94% 옆 화살표 상하 반전 하기
-    delivery_menu_arrow.style.transform = `scaleY(-1)`;
-    // 5. 메뉴 펼침 정보 보이기
-    delivery_menu_open.style.display = 'flex';
+    if(delivery_menu_open_status == false){
+        console.log(delivery_menu_open_status) //open
+        // 3. 위(2)의 둥근 모서리 하단 모양 뾰족하게 변경
+        delivery_menu.style = 'border-bottom-left-radius:0; border-bottom-right-radius:0;'
+        // 4. 위(2)의 94% 옆 화살표 상하 반전 하기
+        delivery_menu_arrow.style.transform = `scaleY(-1)`;
+        // 5. 메뉴 펼침 정보 보이기
+        delivery_menu_open.style.display = 'flex';
+        delivery_menu_open_status = !delivery_menu_open_status
+    }else{
+        console.log(delivery_menu_open_status) //close
+        delivery_menu.style = 'border-bottom-left-radius:5px; border-bottom-right-radius:5px;'
+        delivery_menu_arrow.style.transform = `scaleY(1)`;
+        delivery_menu_open.style.display = 'none';
+        delivery_menu_open_status = !delivery_menu_open_status
+    }
 })
 
 //목표) 상품 색상, 사이즈 옵션을 선택했을 때 선택 정보가 selectResult에 결과값으로 출력되고 num_result의 구매수량에 따라 order_price에 가격이 출략되는 결과
@@ -78,6 +89,9 @@ console.log(colorOpt, sizeOpt);
 console.log(colorOpt.options[1].value);
 console.log(colorOpt.options[1].value.text);
 selectResult.style.display = 'none';
+
+sizeOpt.disabled = true; //size select 비활성화
+
 //colorOpt, sizeOpt text데이터를 모두 변수로 수집 후
 //createElement, appendChild 를 이용해서 opt1, opt2 선택 데이터 출력하기
 const optResult1 = document.createElement('em')
@@ -95,6 +109,8 @@ colorOpt.addEventListener('change',function(){
     console.log(colorOpt.options[colorOpt.selectedIndex].text)
     optResult1.innerHTML = colorOpt.options[colorOpt.selectedIndex].text
     console.log(optResult1)
+
+    sizeOpt.disabled = false;
 })
 sizeOpt.addEventListener('change',function(){
     //선택 option 데이터 저장하기
@@ -103,6 +119,7 @@ sizeOpt.addEventListener('change',function(){
     console.log(optResult2)
     //선택옵션 부모 보이기
     selectResult.style.display = 'grid';
+    selectResult_status = true
     //선택옵션 적용 대상에 위 option데이터값 출력하기
     resultView[0].appendChild(optResult1)
     resultView[1].appendChild(optResult2)
@@ -120,6 +137,7 @@ console.log(resultClose)
 resultClose.addEventListener('click',function(){
     console.log(resultClose.parentElement)
     resultClose.parentElement.style.display = 'none'
+    selectResult_status = false
 })
 
 //수량 -, + 버튼 클릭 시 수량값이 변경되며 그에 따라 가격 변동 
@@ -127,21 +145,45 @@ const minus = selectResult.querySelector('#minus')
 const plus = selectResult.querySelector('#plus')
 let total = 0
 
-plus.addEventListener('click',function(){
-    //1. 수량 1증가
-    num += 1;
-    //1-1. 수량 1 증가한 값 표시
-    numView.value = num
-    //2. 수량*가격 = 구매가
-    total = num*price;
-    //3. 구매가 세자리 콤마 표시
-    priceView.innerHTML = total.toLocaleString('ko-kr')+'원'
-    priceTotalView.innerHTML = total.toLocaleString('ko-kr')+'원'
+//최소 구매 수량1, 최대 구매 수량 7
+//최소 구매 수량입니다.
+//재고 7개로 더 구매할 수 없습니다.
+plus.addEventListener('click',()=>{
+    if(num < 7){
+        //1. 수량 1증가
+        num ++;
+        //1-1. 수량 1 증가한 값 표시
+        numView.value = num
+        //2. 수량*가격 = 구매가
+        total = num*price;
+        //3. 구매가 세자리 콤마 표시
+        priceView.innerHTML = total.toLocaleString('ko-kr')+'원'
+        priceTotalView.innerHTML = total.toLocaleString('ko-kr')+'원'
+    }else{
+        alert('재고 7개로 더 구매할 수 없습니다.')
+    }
 })
-minus.addEventListener('click',function(){
-    num -= 1;
-    numView.value = num
-    total = num*price;
-    priceView.innerHTML = total.toLocaleString('ko-kr')+'원'
-    priceTotalView.innerHTML = total.toLocaleString('ko-kr')+'원'
+minus.addEventListener('click',()=>{
+    if(num > 1){
+        num --;
+        numView.value = num
+        total = num*price;
+        priceView.innerHTML = total.toLocaleString('ko-kr')+'원'
+        priceTotalView.innerHTML = total.toLocaleString('ko-kr')+'원'
+    }else{
+        alert('최소 구매 수량입니다.')
+    }
+})
+
+//상품이 선택되지 않았을 때 '장바구니'버튼 클릭 시 '상품 옵션 선택' 안내 메세지 출력
+//상품이 선택 되면 '장바구니' 클릭 시 '장바구니 담겼습니다' 안내 메세지 출력
+const cartBtn = document.querySelector('#cart')
+let selectResult_status = false
+
+cartBtn.addEventListener('click',()=>{
+    if(selectResult_status == false){
+        alert('상품 옵션을 선택해주세요')
+    }else{
+        alert('장바구니에 상품이 담겼습니다.')
+    }
 })
