@@ -1,0 +1,110 @@
+/* all */
+/* #login_wrap main */
+#login_wrap main {
+    max-width:460px; margin:0 auto;
+    background:beige;
+}
+#login_wrap main #loginFrm {
+    /* border:1px solid #ccc; border-radius:5px; */
+}
+#login_wrap main #loginFrm fieldset {}
+/* 탭 제목 */
+#login_wrap main #loginFrm fieldset .login_title {display:flex;}
+#login_wrap main #loginFrm fieldset .login_title h2 {
+    width:calc(100% / 3); height:60px;
+    text-align: center;
+    background:#f8f9fa;
+    border:1px solid #ccc; 
+    border-radius:0px;
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0; position:relative;
+    display:flex; justify-content: center; align-items: center;
+}
+#login_wrap main #loginFrm fieldset .login_title .active {
+    /* 탭 제목 활성화 대상 */
+    background:#fff; border-bottom-color: #fff;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px; 
+}
+#login_wrap main #loginFrm fieldset .login_title .active::after {
+    content: ''; display: inline-block;
+    background: yellow url(../images/m_sp_login.png) 0 -156px;
+    width: 15px; height: 60px;
+    background-size: 266px 252px;
+    position: absolute; right: -5px; top: -1px; z-index: 100;
+}
+#login_wrap main #loginFrm fieldset .login_title h2:last-child {
+    border-top-right-radius: 5px;
+}
+#login_wrap main #loginFrm fieldset .login_title h2 a {
+    width: 100%; line-height:60px;
+}
+/* 탭 제목 아이콘 */
+#login_wrap main #loginFrm fieldset .login_title h2 a > span:first-child::before,
+#login_wrap main #loginFrm fieldset .login_title h2 a > em:first-child::before {
+    content:''; display:inline-block; width:16px; height:16px;
+    background-image:url(../images/m_sp_login.png);
+    background-size:251px 210px;
+    background-position-x:-231px;
+    margin-right:5px;
+    transform:translateY(2px);
+}
+#login_wrap main #loginFrm fieldset .login_title h2:nth-child(1) a span::before{background-position-y:-100px;}
+#login_wrap main #loginFrm fieldset .login_title h2:nth-child(2) a span::before{background-position-y:-63px;}
+#login_wrap main #loginFrm fieldset .login_title h2:nth-child(3) a > em::before{background-position-y:-119px;}
+/* 탭 제목 QR코드 */
+#login_wrap main #loginFrm fieldset .login_title h2 a > em {}
+#login_wrap main #loginFrm fieldset .login_title h2 a > .popup {
+    background:#fff; border:2px solid #03c75a;
+    box-shadow:0 2px 4px rgba(0,0,0,0.1);
+    border-radius:12px; padding:4px 10px;
+    position: absolute; left: 50%;
+    transform: translate(-50%, -21px);
+    width: max-content;
+}
+#login_wrap main #loginFrm fieldset .login_title h2 a > .popup em {
+    color:#03c75a; font-size:0.625rem;
+}
+#login_wrap main #loginFrm fieldset .login_title h2 a > .popup .close {
+    color:#03c75a; font-size:0.625rem;
+}
+/* 탭 내용 */
+#login_wrap main #loginFrm fieldset .login_container {}
+/* 탭 내용 - id, 일회용, qr 공통 클래스 */
+#login_wrap main #loginFrm fieldset .login_container .login_c {}
+/* ID로그인 */
+/* ID로그인---아이디, 비밀번호 입력 */
+#login_wrap main #loginFrm fieldset .login_container .id_login {
+    background:yellowgreen;
+}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_input {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_input input {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_input #userId {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_input #userPw {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_state {}
+/* ID로그인---로그인 상태유지 */
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_state .login_state {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_state .login_state input[name*=state] {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_state .login_state label[for*=state] {}
+/* ID로그인---IP보안 */
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_state .ip_state {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_state .ip_state input[name*=state] {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_state .ip_state label[for*=state] {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_state .ip_state label[for*=state] .txt {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_state .ip_state label[for*=state] .switch_bg {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .id_pw_state .ip_state label[for*=state] .switch_bg .switch {}
+/* ID로그인---error message */
+#login_wrap main #loginFrm fieldset .login_container .id_login .error_message {}
+/* ID로그인---로그인 버튼 */
+#login_wrap main #loginFrm fieldset .login_container .id_login .login_btn_wrap {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .login_btn_wrap #loginBtn {}
+/* 일회용번호 */
+#login_wrap main #loginFrm fieldset .login_container .disposable_login {background:pink;}
+/* QR코드 */
+#login_wrap main #loginFrm fieldset .login_container .qr_login {background:yellow;}
+/* 찾기 ~ 광고 */
+#login_wrap main .search {}
+#login_wrap main .search a {}
+#login_wrap main .advertising {}
+#login_wrap main .advertising a {}
+#login_wrap main .advertising a img {width:100%;}        

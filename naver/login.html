@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 | 네이버</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/login.css">
+</head>
+<body>
+    <div id="login_wrap">
+        <select name="lang_select" id="lang_select">
+            <option value="ko">한국어</option>
+            <option value="en">English</option>
+        </select>
+        <header><h1><a href="#" title="NAVER"><!-- NAVER --></a></h1></header>
+        <main>
+            <form action="#" method="post" id="loginFrm">
+                <fieldset>
+                    <legend class="skip">ID로그인, 일회용번호, QR코드 양식</legend>
+                    <!-- 제목 탭 구성 -->
+                    <div class="login_title">
+                        <h2 class="active"><a href="#"><span>ID로그인</span></a></h2>
+                        <h2><a href="#"><span>일회용번호</span></a></h2>
+                        <h2><a href="#">
+                            <em>QR코드</em>
+                            <span class="popup">
+                                <em>PC방 등 공용 PC라면 QR코드 로그인이 더 안전해요</em>
+                                <span class="close">x</span>
+                            </span>
+                        </a></h2>
+                    </div>
+                    <!-- 내용 탭 구성 -->
+                    <div class="login_container">
+                        <!-- 내용 탭 1. ID 로그인 -->
+                        <div class="login_c id_login">
+                            <div class="id_pw_input">
+                                <input type="text" placeholder="아이디" id="userId">
+                                <input type="password" placeholder="비밀번호" id="userPw">
+                            </div>
+                            <div class="id_pw_state">
+                                <div class="login_state">
+                                    <input type="checkbox" name="login_state_y" id="login_state_y">
+                                    <label for="login_state_y">로그인 상태 유지</label>
+                                </div>
+                                <div class="ip_state">
+                                    <input type="checkbox" name="ip_state_y" id="ip_state_y">
+                                    <label for="ip_state_y">
+                                        <span class="txt">IP보안</span>
+                                        <span class="switch_bg">
+                                            <span class="switch"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="error_message"><!-- JS --></div>
+                            <div class="login_btn_wrap">
+                                <button type="button" id="loginBtn">로그인</button>
+                            </div>
+                        </div>
+                        <!-- 내용 탭 2. 일회용 번호 -->
+                        <div class="login_c disposable_login">
+                            <!-- contents -->
+                            일회용 번호 네이버앱의 메뉴 설정 로그인 번호를 입력해주세요
+                        </div>
+                        <!-- 내용 탭 3. QR코드 -->
+                        <div class="login_c qr_login">
+                            <!-- contents -->
+                            QR코드 공용 네트워크 공용PC라면 안전을 위해 로그인해주세요
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <div class="search">
+                <a href="#">비밀번호 찾기</a>
+                <a href="#">아이디 찾기</a>
+                <a href="#">회원가입</a>
+            </div>
+            <div class="advertising">
+                <a href="#"><img src="./images/bnr.png" alt="NAVER 클립 크리에이터 모집 중. 활동비에 상금까지 총 12억원"></a>
+            </div>
+        </main>
+        <footer>
+            <div class="f_menu">
+                <a href="#">이용약관</a>
+                <a href="#">개인정보처리방침</a>
+                <a href="#">책임의 한계와 법적고지</a>
+                <a href="#">회원정보 고객센터</a>
+            </div>
+            <address>
+                <span class="logo">NAVER</span>
+                <span class="copy">
+                    Copyright &copy; NAVER Corp. All rights Reserved.
+                </span>
+            </address>
+        </footer>
+    </div>
+    <script src="./script/login.js"></script>
+</body>
+</html>

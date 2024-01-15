@@ -1,0 +1,45 @@
+/* 통합 common css */
+/* all */
+#login_wrap {background:aqua; max-width:743px; margin:0 auto; position: relative;}
+#login_wrap #lang_select {
+    position:absolute; right:0; top:20px;
+    width:95px; border:1px solid #ccc; padding:7px;
+    background:#fff;
+}
+#login_wrap #lang_select option {}
+#login_wrap header,
+#login_wrap footer {text-align:center;}
+/* header */
+#login_wrap header {padding:120px 0 30px;}
+#login_wrap header h1 {}
+#login_wrap header h1 a {}
+#login_wrap header h1 a::before {
+    display:block; content:'';
+    background:url(../images/m_sp.png) 0 -166px;
+    width:248px; height:48px;
+    margin:0 auto;
+}
+/* footer */
+#login_wrap footer {padding:50px 0 30px;}
+#login_wrap footer .f_menu {padding-bottom:10px;}
+#login_wrap footer .f_menu a {
+    color:#888; margin-right:8px;
+}
+#login_wrap footer .f_menu a::after {
+    content:''; display:inline-block;
+    background:#888; width:1px; height:10px;
+    transform:translate(7px, -1px);
+}
+#login_wrap footer .f_menu a:last-child::after {display:none;}
+#login_wrap footer .f_menu a:nth-child(2) {font-weight:700;}
+#login_wrap footer address {
+    display:flex; align-items:flex-end;
+    justify-content: center;
+}
+#login_wrap footer address .logo {
+    display:inline-block;
+    width:135px; height:26px;
+    background:url(../images/m_sp.png) -316px -104px;
+    text-indent:-9999px;
+}
+#login_wrap footer address .copy {color:#888;}
