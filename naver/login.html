@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/common.css">
     <link rel="stylesheet" href="./styles/login.css">
+    <link rel="stylesheet" href="./styles/login_js.css"> <!-- js호출용 -->
 </head>
 <body>
     <div id="login_wrap">
@@ -21,7 +22,7 @@
                     <legend class="skip">ID로그인, 일회용번호, QR코드 양식</legend>
                     <!-- 제목 탭 구성 -->
                     <div class="login_title">
-                        <h2 class="active"><a href="#"><span>ID로그인</span></a></h2>
+                        <h2><a href="#"><span>ID로그인</span></a></h2>
                         <h2><a href="#"><span>일회용번호</span></a></h2>
                         <h2><a href="#">
                             <em>QR코드</em>
@@ -36,8 +37,8 @@
                         <!-- 내용 탭 1. ID 로그인 -->
                         <div class="login_c id_login">
                             <div class="id_pw_input">
-                                <input type="text" placeholder="아이디" id="userId">
-                                <input type="password" placeholder="비밀번호" id="userPw">
+                                <span><input type="text" placeholder="아이디" id="userId"></span>
+                                <span><input type="password" maxlength="16" placeholder="비밀번호" id="userPw"></span>
                             </div>
                             <div class="id_pw_state">
                                 <div class="login_state">
