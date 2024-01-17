@@ -137,7 +137,9 @@
     background:#03c75a;
 }
 /* ID로그인---error message */
-#login_wrap main #loginFrm fieldset .login_container .id_login .error_message {}
+#login_wrap main #loginFrm fieldset .login_container .id_login .error_message {
+    font-size:0.91rem; color:#f00; padding:10px 0;
+}
 /* ID로그인---로그인 버튼 */
 #login_wrap main #loginFrm fieldset .login_container .id_login .login_btn_wrap {}
 #login_wrap main #loginFrm fieldset .login_container .id_login .login_btn_wrap #loginBtn {
