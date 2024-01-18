@@ -1,0 +1,19 @@
+h1 {text-align:center; padding:50px 0; font-size:2rem;}
+main {
+    max-width:1000px; margin:0 auto;
+    display:flex; justify-content: space-between;
+    align-items:flex-start;
+}
+main aside {width:200px; background:#222; padding:10px;}
+main aside h2 {color:#fff; margin-bottom:15px;}
+main aside .category {}
+main aside .category a {color:#fff;display:block;padding:5px 0;}
+main .container {
+    width:calc(100% - 250px); display:flex; flex-flow:row wrap;
+    justify-content:space-between;
+}
+main .container .item {width:calc((100% / 3) - 10px); margin:0 0 50px;}
+main .container .item .photo {}
+main .container .item .photo img {width:100%;}
+main .container .item h2 {font-weight:600; margin-bottom:10px;}
+main .container .item .price {}
