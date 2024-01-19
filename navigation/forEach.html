@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach?</title>
+</head>
+<body>
+    <nav>
+        <a href="#">nav1</a>
+        <a href="#">nav2</a>
+        <a href="#">nav3</a>
+        <a href="#">nav4</a>
+    </nav>
+    <main>
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+    </main>
+    <hr>
+    <div class="tab">
+        <a href="#">tab1</a>
+        <a href="#">tab2</a>
+        <a href="#">tab3</a>
+    </div>
+    <div class="tab_contents">
+        <div class="tab_c">tab_c1</div>
+        <div class="tab_c">tab_c2</div>
+        <div class="tab_c">tab_c3</div>
+    </div>
+    <script>
+        const tab_a = document.querySelectorAll('.tab a')
+        const tab_c = document.querySelectorAll('.tab_contents .tab_c')
+        console.log(tab_a, tab_c)
+
+        const tab_c_hide = () => {for(let h of tab_c){h.style.display='none'}}
+        tab_c_hide()
+        tab_c[0].style.display = 'block'
+
+        tab_a.forEach((t,i)=>{
+            t.addEventListener('click',()=>{
+                tab_c_hide()
+                tab_c[i].style.display = 'block'
+            })
+        })
+
+
+
+        const nav_a = document.querySelectorAll('nav a')
+        const main_box = document.querySelectorAll('main .box')
+        console.log(nav_a)
+        console.log(main_box)
+
+        /*
+        접근변수.forEach(function(객체, 인덱스, 배열){
+            생성된 매개변수 객체, 인덱스, 배열을 활용한 JS 반복결과
+        })
+        접근변수.forEach((객체,인덱스,배열)=>{
+            생성된 매개변수 객체, 인덱스, 배열을 활용한 JS 반복결과
+        })
+        */
+
+        //for~in, for~of를 쓰지 않고 forEach를 쓰는 경우
+        //index, target(DOM) 모두 활용하고 싶을 때
+        nav_a.forEach((t, i)=>{
+            t.addEventListener('click',()=>{
+                console.log(main_box[i])
+                main_box[i].style.backgroundColor = 'aqua'
+            })
+        })
+
+
+    </script>
+</body>
+</html>
